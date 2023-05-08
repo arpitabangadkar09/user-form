@@ -9,20 +9,16 @@ function App() {
        console.log('last name', mylastname);
        console.log('email',myemail );
        console.log('password',mypassword);
-  }
+       console.log('contact',mycontact);
 
-  const [counter, setCounter] = useState(0);
-  const incrementCounter = () => {
-      console.log('do increment');
-      setCounter(counter + 1);
-      
   }
+ 
 
   const [myfirstname, setMyfirstname] = useState('');
   const [mylastname, setMylastname]  = useState('');
   const [myemail, setMyemail] = useState('');
   const [mypassword, setMypassword] = useState('');
-
+  const [mycontact, setMycontact] = useState('');
   
 
   return (
@@ -31,9 +27,6 @@ function App() {
     <div className="App">
          <h1> User Form </h1>
 
-         <h3>Current page {counter}</h3>
-
-         <button onClick = {incrementCounter}> increment + </button>
          
          <br></br><br></br>
          <div>
@@ -57,10 +50,12 @@ function App() {
           </div>
           <br></br> 
           <div>
-                  
+                 Contact Number<br></br>
+                 <input type = 'text' value = {mycontact} onChange = {(e) =>setMycontact(e.target.value)} />
           </div>
           <br></br>
           <button onClick = { () => {submitstring()}}> submit </button>
+         
     </div>
   );
 }
